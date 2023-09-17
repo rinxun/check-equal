@@ -1,9 +1,10 @@
 {
   "name": "@rinxun/check-equal",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "description": "A TypeScript library for checking whether two objects are equal (includes type), objects can be array/string/number/JSON/function, etc.",
   "license": "MIT",
   "private": false,
+  "type": "module",
   "main": "./dist/index.js",
   "publishConfig": {
     "access": "public",
@@ -34,10 +35,10 @@
     "typescript": "^5.2.2"
   },
   "files": [
-    "*.js",
-    "*.d.ts",
-    "**/*.js",
-    "**/*.d.ts",
+    "dist/*.js",
+    "dist/*.d.ts",
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
     ".gitignore",
     "package.json",
     "README.md",
