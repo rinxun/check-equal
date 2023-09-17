@@ -1,0 +1,46 @@
+{
+  "name": "@rinxun/check-equal",
+  "version": "0.1.0-alpha.1",
+  "description": "A TypeScript library for checking whether two objects are equal (includes type), objects can be array/string/number/JSON/function, etc.",
+  "license": "MIT",
+  "private": false,
+  "main": "./build/index.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rinxun/check-equal"
+  },
+  "author": {
+    "name": "Janden Ma",
+    "email": "janden_ma@qq.com",
+    "url": "https://github.com/JandneMa"
+  },
+  "bugs": {
+    "url": "https://github.com/rinxun/check-equal/issues",
+    "email": "hello@rinxun.com"
+  },
+  "homepage": "https://github.com/rinxun/check-equal#readme",
+  "keywords": [
+    "Check objects equal",
+    "compare"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist & ./node_modules/.bin/tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "files": [
+    "./dist/*.js",
+    "./dist/*.d.ts",
+    "./dist/**/*.js",
+    "./dist/**/*.d.ts",
+    ".gitignore",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ]
+}
