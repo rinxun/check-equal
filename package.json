@@ -1,6 +1,6 @@
 {
   "name": "@rinxun/check-equal",
-  "version": "1.0.1-alpha.5",
+  "version": "1.0.1-alpha.6",
   "description": "A TypeScript library for checking whether two objects are equal (includes type), objects can be array/string/number/JSON/function, etc.",
   "license": "MIT",
   "private": false,
@@ -9,9 +9,11 @@
   "exports": {
     ".": {
       "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/esm/index.d.ts"
     }
   },
+  "types": "dist/**/*.d.ts",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -38,18 +40,15 @@
     "node": ">=16"
   },
   "scripts": {
-    "compile:esm": "./node_modules/.bin/tsc",
-    "compile:cjs": "./node_modules/.bin/tsc -m node16 --moduleResolution node16 --outDir dist/cjs",
+    "compile:esm": "./node_modules/.bin/tsc -p tsconfig-esm.json",
+    "compile:cjs": "./node_modules/.bin/tsc -p tsconfig-cjs.json",
     "build": "rm -rf ./dist & yarn compile:esm & yarn compile:cjs"
   },
   "devDependencies": {
     "typescript": "^5.2.2"
   },
   "files": [
-    "dist/*.js",
-    "dist/*.d.ts",
-    "dist/**/*.js",
-    "dist/**/*.d.ts",
+    "dist/",
     ".gitignore",
     "package.json",
     "README.md",
