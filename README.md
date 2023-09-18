@@ -34,7 +34,7 @@
 
 - `checkEqual(a, b, strictMode)`
   - `a` and `b` are two objects for checking, they can be array/string/number/JSON/function, etc.
-  - `strictMode` defaults to `true`, if true we check by `===` internally, otherwise, we check by `==`.
+  - `strictMode` defaults to `true`, if true we check by `===` internally, otherwise, we check by `==`. Furthermore, if false we will ignore item order when checking arrays.
 
 ## Example
 
@@ -77,7 +77,9 @@ checkEqual(true, false) //false
 
 checkEqual([1, 2, 3], [1, 2, 3]) //true
 
-checkEqual([1, 2, 3], [3, 1, 2]) //true
+checkEqual([1, 2, 3], [3, 1, 2], false) //true
+
+checkEqual([1, 2, 3], [3, 1, 2], true) //false
 
 checkEqual([1, 2, 3], [1, 2]) //false (different length)
 
