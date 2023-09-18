@@ -1,4 +1,4 @@
-import { isNil } from "./utils.js";
+import { isNil } from "./utils";
 
 function sortArray(arr: Array<any>) {
   arr.sort((a, b) => {
@@ -50,9 +50,11 @@ function checkEqualForArray(
   if (arrA.length !== arrB.length) {
     return false;
   } else {
-    //sort array first
-    sortArray(arrA);
-    sortArray(arrB);
+    if (!strictMode) {
+      //sort array first
+      sortArray(arrA);
+      sortArray(arrB);
+    }
     let _equal = true;
     for (let i = 0, l = arrA.length; i < l; i += 1) {
       if (!checkEqual(arrA[i], arrB[i], strictMode)) {
